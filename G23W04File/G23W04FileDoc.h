@@ -8,6 +8,14 @@
 
 class CG23W04FileDoc : public CDocument
 {
+	// 별도의 클래스를 생성해도 됨
+protected:
+	// 변수는 생성자와 OnNewDocument() 두 곳에서 초기화 필요
+	CPoint Point = CPoint(-100, -100);
+public:
+	CPoint GetPoint() { return Point; }
+	void SetPoint(CPoint p) { Point = p; }
+
 protected: // serialization에서만 만들어집니다.
 	CG23W04FileDoc() noexcept;
 	DECLARE_DYNCREATE(CG23W04FileDoc)
